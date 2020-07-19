@@ -1,6 +1,7 @@
 import requests
 import selenium 
 
-url="https://stopcorona.tn.gov.in/"
-
-xpath="//*[@id=\"mtphr-dnt-12\"]/div/div/div/div[1]/p/a"
+url="https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Tamil_Nadu#covid19-container"
+data=requests.get(url)
+capturedData=data.split("By_district")[1]
+print(capturedData)
