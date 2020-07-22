@@ -13,9 +13,9 @@ for page in range(2,totalPages):
     resData+=json.loads(req.get(url).text)["data"]["rows"]
 
 jsonData=json.dumps(resData)
-path=r"C:\Users\Deepak\Documents\GitHub\PythonDataAnalyticsCorona\CollectedData\WorldCoronaCount.json"
+path=r"C:\Users\Deepak\Documents\GitHub\PythonDataAnalyticsCorona\CollectedData\WorldCoronaCount.csv"
 worldData=pd.read_json(jsonData)
 worldData.drop(["flag"],axis=1,inplace=True)
 print(worldData)
-worldData.to_json(path)
+worldData.to_csv(path)
 
